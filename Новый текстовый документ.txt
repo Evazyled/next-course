@@ -1,0 +1,10 @@
+useEffect(() => {
+    fetchPosts();
+  }, []);
+  const searchPosts = useMemo(() => {
+    console.log("3");
+    if (!searchInput.length) {
+      return [...posts].filter((post: any) => post.title.includes(searchInput));
+    }
+    return posts;
+  }, [searchInput, posts]);
